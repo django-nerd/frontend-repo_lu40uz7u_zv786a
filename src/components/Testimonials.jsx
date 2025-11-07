@@ -2,26 +2,67 @@ import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 
 const testimonials = [
+  // Indonesia
   {
     name: 'Rina Putri',
     role: 'Brand Manager, Tokopedia',
-    quoteEn: 'Studio AI delivered a stunning AI-driven ad that boosted our campaign CTR by 42%. The team is fast, visionary, and detail-obsessed.',
-    quoteId: 'Studio AI menghasilkan iklan berbasis AI yang memukau dan meningkatkan CTR campaign kami hingga 42%. Timnya cepat, visioner, dan sangat detail.',
-    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop',
+    quoteEn:
+      'Studio AI delivered a stunning AI-driven ad that boosted our campaign CTR by 42%. The team is fast, visionary, and detail-obsessed.',
+    quoteId:
+      'Studio AI menghasilkan iklan berbasis AI yang memukau dan meningkatkan CTR campaign kami hingga 42%. Timnya cepat, visioner, dan sangat detail.',
+    avatar:
+      'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop',
   },
   {
     name: 'Arif Setiawan',
     role: 'Head of Creative, Gojek',
-    quoteEn: 'They bring cinematic quality and AI innovation in one package. Our short film went viral in days.',
-    quoteId: 'Mereka menghadirkan kualitas sinematik dan inovasi AI dalam satu paket. Short film kami viral dalam hitungan hari.',
-    avatar: 'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=400&auto=format&fit=crop',
+    quoteEn:
+      'They bring cinematic quality and AI innovation in one package. Our short film went viral in days.',
+    quoteId:
+      'Mereka menghadirkan kualitas sinematik dan inovasi AI dalam satu paket. Short film kami viral dalam hitungan hari.',
+    avatar:
+      'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=400&auto=format&fit=crop',
   },
   {
     name: 'Maya Sasmita',
     role: 'Marketing Lead, Indomie',
-    quoteEn: 'The brand visuals felt premium and inevitable. It moved the needle across our social channels.',
-    quoteId: 'Visual brand kami terasa premium dan kuat. Dampaknya signifikan di seluruh kanal sosial.',
-    avatar: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=400&auto=format&fit=crop',
+    quoteEn:
+      'The brand visuals felt premium and inevitable. It moved the needle across our social channels.',
+    quoteId:
+      'Visual brand kami terasa premium dan kuat. Dampaknya signifikan di seluruh kanal sosial.',
+    avatar:
+      'https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=400&auto=format&fit=crop',
+  },
+  // International
+  {
+    name: 'Emily Carter',
+    role: 'Global Creative Director, Nike',
+    quoteEn:
+      'Their taste level and speed are world-class. The AI previsualization saved us weeks in production.',
+    quoteId:
+      'Kualitas selera dan kecepatan mereka kelas dunia. Previsualisasi AI menghemat waktu produksi berminggu-minggu.',
+    avatar:
+      'https://images.unsplash.com/photo-1544005313-7ef0369d4860?q=80&w=400&auto=format&fit=crop',
+  },
+  {
+    name: 'Daniel Kim',
+    role: 'Sr. Producer, Samsung',
+    quoteEn:
+      'From storyboard to final grade, the pipeline was seamless. Our launch film surpassed KPI across markets.',
+    quoteId:
+      'Dari storyboard sampai final grade, alurnya sangat rapi. Film peluncuran kami melampaui KPI di berbagai market.',
+    avatar:
+      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&auto=format&fit=crop',
+  },
+  {
+    name: 'Sofia Martínez',
+    role: 'Brand Lead, Coca-Cola EMEA',
+    quoteEn:
+      'Cinematic, bold, and culturally tuned. They turned a complex brief into a clear, iconic story.',
+    quoteId:
+      'Sinematik, berani, dan peka budaya. Mereka mengubah brief kompleks menjadi cerita ikonik yang jelas.',
+    avatar:
+      'https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=400&auto=format&fit=crop',
   },
 ];
 

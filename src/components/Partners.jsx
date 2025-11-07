@@ -1,22 +1,22 @@
 import { motion } from 'framer-motion';
 
 const brands = [
-  { name: 'Mercedes-Benz', country: 'Global' },
-  { name: 'Apple', country: 'Global' },
-  { name: 'Samsung', country: 'Global' },
-  { name: 'Nike', country: 'Global' },
-  { name: 'Coca-Cola', country: 'Global' },
-  { name: 'Tokopedia', country: 'Indonesia' },
-  { name: 'Gojek', country: 'Indonesia' },
-  { name: 'Grab', country: 'Regional' },
+  { name: 'Mercedes-Benz', country: 'Global', logoSlug: 'mercedes' },
+  { name: 'Apple', country: 'Global', logoSlug: 'apple' },
+  { name: 'Samsung', country: 'Global', logoSlug: 'samsung' },
+  { name: 'Nike', country: 'Global', logoSlug: 'nike' },
+  { name: 'Coca-Cola', country: 'Global', logoSlug: 'cocacola' },
+  { name: 'Tokopedia', country: 'Indonesia', logoSlug: 'tokopedia' },
+  { name: 'Gojek', country: 'Indonesia', logoSlug: 'gojek' },
+  { name: 'Grab', country: 'Regional', logoSlug: 'grab' },
   { name: 'Indomie', country: 'Indonesia' },
-  { name: 'Telkomsel', country: 'Indonesia' },
+  { name: 'Telkomsel', country: 'Indonesia', logoSlug: 'telkomsel' },
   { name: 'Bank BCA', country: 'Indonesia' },
   { name: 'Bank Mandiri', country: 'Indonesia' },
-  { name: 'Traveloka', country: 'Indonesia' },
-  { name: 'Unilever', country: 'Global' },
-  { name: 'Adidas', country: 'Global' },
-  { name: 'Shopee', country: 'Regional' },
+  { name: 'Traveloka', country: 'Indonesia', logoSlug: 'traveloka' },
+  { name: 'Unilever', country: 'Global', logoSlug: 'unilever' },
+  { name: 'Adidas', country: 'Global', logoSlug: 'adidas' },
+  { name: 'Shopee', country: 'Regional', logoSlug: 'shopee' },
 ];
 
 export default function Partners({ lang = 'en' }) {
@@ -55,24 +55,37 @@ export default function Partners({ lang = 'en' }) {
         </motion.p>
 
         <div className="mt-10 grid items-stretch gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {brands.map((b, i) => (
-            <motion.div
-              key={b.name}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: i * 0.03 }}
-              className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl hover:border-white/20 hover:bg-white/10"
-            >
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-sm font-semibold text-white">
-                {b.name.split(' ').map(w => w[0]).join('').slice(0, 2)}
-              </div>
-              <div className="min-w-0">
-                <p className="truncate text-sm font-medium">{b.name}</p>
-                <p className="truncate text-xs text-slate-400">{b.country}</p>
-              </div>
-            </motion.div>
-          ))}
+          {brands.map((b, i) => {
+            const logoUrl = b.logoSlug ? `https://cdn.simpleicons.org/${b.logoSlug}/ffffff` : null;
+            return (
+              <motion.div
+                key={b.name}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: i * 0.03 }}
+                className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl hover:border-white/20 hover:bg-white/10"
+              >
+                {logoUrl ? (
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10">
+                    <img
+                      src={logoUrl}
+                      alt={`${b.name} logo`}
+                      className="h-5 w-5 opacity-90"
+                    />
+                  </div>
+                ) : (
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-sm font-semibold text-white">
+                    {b.name.split(' ').map(w => w[0]).join('').slice(0, 2)}
+                  </div>
+                )}
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-medium">{b.name}</p>
+                  <p className="truncate text-xs text-slate-400">{b.country}</p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
