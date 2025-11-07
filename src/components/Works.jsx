@@ -1,6 +1,26 @@
 import { motion } from 'framer-motion';
 
-export default function Works() {
+export default function Works({ lang = 'en' }) {
+  const t = {
+    en: { title: 'Showreel & Works', cards: ['Luxury Fashion — Motion Portraits', 'Automotive — Electric Elegance', 'Beverage — Neon City Story'] },
+    id: { title: 'Showreel & Karya', cards: ['Fashion Mewah — Motion Portraits', 'Otomotif — Electric Elegance', 'Minuman — Kisah Kota Neon'] },
+  }[lang];
+
+  const cards = [
+    {
+      title: t.cards[0],
+      img: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop',
+    },
+    {
+      title: t.cards[1],
+      img: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?q=80&w=1200&auto=format&fit=crop',
+    },
+    {
+      title: t.cards[2],
+      img: 'https://images.unsplash.com/photo-1526406915894-6c1d6d5f3d15?q=80&w=1200&auto=format&fit=crop',
+    },
+  ];
+
   return (
     <section className="relative w-full bg-[#0b0b0f] py-24 text-white">
       <div className="relative mx-auto max-w-6xl px-6">
@@ -11,10 +31,9 @@ export default function Works() {
           transition={{ duration: 0.8 }}
           className="text-2xl font-semibold sm:text-3xl"
         >
-          Showreel & Works
+          {t.title}
         </motion.h2>
 
-        {/* Reel */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -33,22 +52,8 @@ export default function Works() {
           </div>
         </motion.div>
 
-        {/* Grid */}
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            {
-              title: 'Luxury Fashion — Motion Portraits',
-              img: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop',
-            },
-            {
-              title: 'Automotive — Electric Elegance',
-              img: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?q=80&w=1200&auto=format&fit=crop',
-            },
-            {
-              title: 'Beverage — Neon City Story',
-              img: 'https://images.unsplash.com/photo-1526406915894-6c1d6d5f3d15?q=80&w=1200&auto=format&fit=crop',
-            },
-          ].map((card, i) => (
+          {cards.map((card, i) => (
             <motion.article
               key={card.title}
               initial={{ opacity: 0, y: 16 }}

@@ -1,30 +1,26 @@
 import { motion } from 'framer-motion';
 import { Film, Sparkles, Rocket, Palette } from 'lucide-react';
 
-const services = [
-  {
-    icon: Film,
-    title: 'AI Ad Production',
-    description: 'Concept-to-delivery cinematic ads crafted with generative AI pipelines.',
-  },
-  {
-    icon: Sparkles,
-    title: 'AI Short Film Creation',
-    description: 'Original short films blending narrative, design, and machine imagination.',
-  },
-  {
-    icon: Palette,
-    title: 'Brand Story Visuals',
-    description: 'Art-directed visuals that make your brand feel iconic and inevitable.',
-  },
-  {
-    icon: Rocket,
-    title: 'Creative Campaign Direction',
-    description: 'End-to-end creative leadership for viral, premium, and on-brand campaigns.',
-  },
+const servicesEN = [
+  { icon: Film, title: 'AI Ad Production', description: 'Concept-to-delivery cinematic ads crafted with generative AI pipelines.' },
+  { icon: Sparkles, title: 'AI Short Film Creation', description: 'Original short films blending narrative, design, and machine imagination.' },
+  { icon: Palette, title: 'Brand Story Visuals', description: 'Art-directed visuals that make your brand feel iconic and inevitable.' },
+  { icon: Rocket, title: 'Creative Campaign Direction', description: 'End-to-end creative leadership for viral, premium, and on-brand campaigns.' },
 ];
 
-export default function Services() {
+const servicesID = [
+  { icon: Film, title: 'Produksi Iklan AI', description: 'Iklan sinematik dari konsep hingga rilis, dibuat dengan pipeline AI generatif.' },
+  { icon: Sparkles, title: 'Pembuatan Film Pendek AI', description: 'Film pendek orisinal yang memadukan narasi, desain, dan imajinasi mesin.' },
+  { icon: Palette, title: 'Visual Cerita Brand', description: 'Visual berarahan seni yang membuat brand terasa ikonik dan kuat.' },
+  { icon: Rocket, title: 'Creative Campaign Direction', description: 'Kepemimpinan kreatif end-to-end untuk kampanye viral, premium, dan on-brand.' },
+];
+
+export default function Services({ lang = 'en' }) {
+  const t = {
+    en: { title: 'Services', list: servicesEN },
+    id: { title: 'Layanan', list: servicesID },
+  }[lang];
+
   return (
     <section className="relative w-full bg-[#0b0b0f] py-24 text-white">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(56,189,248,0.08),transparent_60%)]" />
@@ -36,11 +32,11 @@ export default function Services() {
           transition={{ duration: 0.8 }}
           className="text-2xl font-semibold sm:text-3xl"
         >
-          Services
+          {t.title}
         </motion.h2>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((s, idx) => (
+          {t.list.map((s, idx) => (
             <motion.div
               key={s.title}
               initial={{ opacity: 0, y: 16 }}
